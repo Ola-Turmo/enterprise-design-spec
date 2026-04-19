@@ -1,0 +1,40 @@
+{
+  "color": {
+    "background": {
+      "brand": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.blue.600}"
+        },
+        "inverse": {
+          "$type": "color",
+          "$value": "{color.white}"
+        }
+      },
+      "canvas": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.gray.50}"
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{color.gray.900}"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{color.white}"
+      }
+    }
+  },
+  "logo": {
+    "primary": {
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.background.brand.default}"
+      }
+    }
+  }
+}

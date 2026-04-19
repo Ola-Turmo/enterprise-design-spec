@@ -1,0 +1,36 @@
+{
+  "id": "brand.logo.primary.horizontal",
+  "title": "Example logo",
+  "assetType": "logo",
+  "subtype": "wordmark-lockup",
+  "status": "approved",
+  "maturity": "ga",
+  "brand": "example",
+  "channels": [
+    "web"
+  ],
+  "usageContexts": [
+    "site-header"
+  ],
+  "owners": {
+    "design": "brand-team"
+  },
+  "sourceOfTruth": {
+    "tool": "Figma",
+    "location": "Example / Logos"
+  },
+  "editableMasters": [
+    "source/example/logo.fig"
+  ],
+  "tokenRefs": [
+    "color.background.brand.default"
+  ],
+  "formatProfiles": [
+    "svg-web"
+  ],
+  "accessibility": {
+    "altText": "Example logo",
+    "wcagTarget": "WCAG 2.2 AA"
+  },
+  "version": "1.0.0"
+}

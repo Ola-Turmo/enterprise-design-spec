@@ -1,0 +1,44 @@
+{
+  "id": "brand.logo.primary.horizontal",
+  "title": "Primary horizontal logo",
+  "assetType": "logo",
+  "subtype": "wordmark-lockup",
+  "status": "approved",
+  "maturity": "ga",
+  "brand": "acme",
+  "channels": [
+    "web",
+    "print"
+  ],
+  "usageContexts": [
+    "site-header",
+    "proposal-cover"
+  ],
+  "owners": {
+    "design": "brand-team",
+    "engineering": "design-systems"
+  },
+  "sourceOfTruth": {
+    "tool": "Figma",
+    "location": "Brand Library / Logos / Approved"
+  },
+  "editableMasters": [
+    "source/brand/logo/acme-logo-master.fig"
+  ],
+  "tokenRefs": [
+    "color.background.brand.default"
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "formatProfiles": [
+    "svg-web",
+    "pdfx4-print"
+  ],
+  "accessibility": {
+    "altText": "Acme logo",
+    "wcagTarget": "WCAG 2.2 AA"
+  },
+  "version": "1.0.0"
+}

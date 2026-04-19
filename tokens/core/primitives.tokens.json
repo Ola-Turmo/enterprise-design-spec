@@ -1,0 +1,86 @@
+{
+  "color": {
+    "blue": {
+      "600": {
+        "$type": "color",
+        "$value": "#175CD3"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#1849A9"
+      }
+    },
+    "gray": {
+      "50": {
+        "$type": "color",
+        "$value": "#F8FAFC"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#0F172A"
+      }
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#FFFFFF"
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000"
+    }
+  },
+  "font": {
+    "family": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": "Inter, \"Segoe UI\", sans-serif"
+      }
+    },
+    "size": {
+      "100": {
+        "$type": "dimension",
+        "$value": "0.875rem"
+      },
+      "400": {
+        "$type": "dimension",
+        "$value": "1.5rem"
+      },
+      "700": {
+        "$type": "dimension",
+        "$value": "2.5rem"
+      }
+    }
+  },
+  "space": {
+    "100": {
+      "$type": "dimension",
+      "$value": "0.25rem"
+    },
+    "200": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    },
+    "400": {
+      "$type": "dimension",
+      "$value": "1rem"
+    },
+    "800": {
+      "$type": "dimension",
+      "$value": "2rem"
+    }
+  },
+  "radius": {
+    "200": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": {
+        "$type": "duration",
+        "$value": "150ms"
+      }
+    }
+  }
+}

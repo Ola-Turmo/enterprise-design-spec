@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/asset-manifest.schema.json",
+  "title": "Enterprise Design Asset Manifest",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "assetType",
+    "subtype",
+    "status",
+    "maturity",
+    "brand",
+    "channels",
+    "usageContexts",
+    "owners",
+    "sourceOfTruth",
+    "editableMasters",
+    "formatProfiles",
+    "accessibility",
+    "version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(\\.[a-z0-9-]+)+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assetType": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtype": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "in-review",
+        "approved",
+        "published",
+        "deprecated",
+        "retired"
+      ]
+    },
+    "maturity": {
+      "type": "string",
+      "enum": [
+        "experimental",
+        "beta",
+        "ga",
+        "deprecated"
+      ]
+    },
+    "brand": {
+      "type": "string",
+      "minLength": 1
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "usageContexts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "owners": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "approvers": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "sourceOfTruth": {
+      "type": "object",
+      "required": [
+        "tool",
+        "location"
+      ],
+      "properties": {
+        "tool": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "editableMasters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "tokenRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "breakpoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locales": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "w": {
+          "type": "number"
+        },
+        "h": {
+          "type": "number"
+        },
+        "ratio": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "colorSpace": {
+      "type": "string"
+    },
+    "durationMs": {
+      "type": "number",
+      "minimum": 0
+    },
+    "frameRate": {
+      "type": "number",
+      "minimum": 0
+    },
+    "formatProfiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "required": [
+        "altText",
+        "wcagTarget"
+      ],
+      "properties": {
+        "altText": {
+          "type": "string"
+        },
+        "wcagTarget": {
+          "type": "string"
+        },
+        "decorativeWhenAdjacentText": {
+          "type": "boolean"
+        },
+        "reducedMotion": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "changeType": {
+      "type": "string",
+      "enum": [
+        "major",
+        "minor",
+        "patch"
+      ]
+    },
+    "deprecatedBy": {
+      "type": "string"
+    },
+    "checksum": {
+      "type": "string"
+    },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "published"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "publishedAt"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": true
+}

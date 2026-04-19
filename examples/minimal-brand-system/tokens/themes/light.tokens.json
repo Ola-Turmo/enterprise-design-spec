@@ -1,0 +1,12 @@
+{
+  "color": {
+    "background": {
+      "brand": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.blue.600}"
+        }
+      }
+    }
+  }
+}

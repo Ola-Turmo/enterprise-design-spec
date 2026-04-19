@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/design-frontmatter.schema.json",
+  "title": "Enterprise Design Asset Page Front Matter",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "assetType",
+    "channels",
+    "version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(\\.[a-z0-9-]+)+$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "assetType": {
+      "type": "string"
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "maturity": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "usageContexts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "formatProfiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-04-19T13:57:09.520Z",
+  "assetCount": 2,
+  "assets": [
+    {
+      "id": "brand.logo.primary.horizontal",
+      "title": "Primary horizontal logo",
+      "assetType": "logo",
+      "status": "published",
+      "maturity": "ga",
+      "version": "2.1.0",
+      "channels": [
+        "web",
+        "email",
+        "print",
+        "presentation"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "mono"
+      ],
+      "formatProfiles": [
+        "svg-web",
+        "png-raster",
+        "pdfx4-print"
+      ],
+      "manifestPath": "manifests/assets/brand.logo.primary.horizontal.asset.json",
+      "docPath": "docs/assets/logos/primary-horizontal-logo.mdx"
+    },
+    {
+      "id": "marketing.social.linkedin.company-banner.default",
+      "title": "LinkedIn company banner",
+      "assetType": "social-banner",
+      "status": "approved",
+      "maturity": "ga",
+      "version": "1.3.0",
+      "channels": [
+        "linkedin"
+      ],
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "formatProfiles": [
+        "png-social-2x",
+        "jpg-social"
+      ],
+      "manifestPath": "manifests/assets/marketing.social.linkedin.company-banner.default.asset.json",
+      "docPath": "docs/assets/social/linkedin-company-banner.mdx"
+    }
+  ]
+}

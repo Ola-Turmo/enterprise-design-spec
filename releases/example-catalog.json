@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-04-19T13:56:12.086Z",
+  "assetCount": 1,
+  "assets": [
+    {
+      "id": "brand.logo.primary.horizontal",
+      "title": "Example logo",
+      "assetType": "logo",
+      "status": "approved",
+      "maturity": "ga",
+      "version": "1.0.0",
+      "channels": [
+        "web"
+      ],
+      "themes": [],
+      "formatProfiles": [
+        "svg-web"
+      ],
+      "manifestPath": "manifests/assets/brand.logo.primary.horizontal.asset.json",
+      "docPath": "docs/assets/logos/example-logo.mdx"
+    }
+  ]
+}
