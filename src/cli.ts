@@ -7,6 +7,8 @@ import { exportTokens } from "./lib/export.js";
 import { resolveAliases } from "./lib/alias.js";
 import { generateTypes } from "./lib/types.js";
 import { generatePlayground } from "./lib/playground.js";
+import { runSnapshotTests, updateGoldenFiles } from "./lib/snapshot.js";
+import { migrateFromFormat } from "./lib/migrate.js";
 import { writeJsonFile } from "./lib/fs.js";
 
 async function main(): Promise<void> {
@@ -184,6 +186,49 @@ async function main(): Promise<void> {
     const output = resolveFlag("--output") ?? path.resolve(root, "dist/tokens/playground.html");
     const result = await generatePlayground(root, output);
     console.log(`Generated playground at ${result.outputPath} (${result.tokenCount} tokens)`);
+    return;
+  }
+
+  if (command === "snapshot") {
+    const update = process.argv.includes("--update");
+    const goldenDir = resolveFlag("--golden") ?? path.resolve(root, "__snapshots__");
+
+    if (update) {
+      const updated = await updateGoldenFiles(root, goldenDir);
+      console.log(`Updated ${updated} golden files in ${goldenDir}`);
+    } else {
+      const result = await runSnapshotTests(root, goldenDir);
+      console.log(`\nSnapshot Results:`);
+      console.log(`  ✅ ${result.passed} passed`);
+      console.log(`  ❌ ${result.failed} failed`);
+      console.log(`  ⚠️  ${result.missing} missing golden files`);
+      console.log(`\nRun with --update to regenerate golden files`);
+      process.exit(result.failed > 0 ? 1 : 0);
+    }
+    return;
+  }
+
+  if (command === "migrate") {
+    const input = resolveFlag("--input");
+    const output = resolveFlag("--output");
+    const format = resolveFlag("--from") ?? "basic";
+
+    if (!input || !output) {
+      console.error("Usage:");
+      console.error("  enterprise-design-spec migrate --input <path> --output <path> --from <format>");
+      console.error("");
+      console.error("Supported formats: amazon-style-dictionary, figma-tokens, tokens-studio, brandflow, basic");
+      process.exitCode = 1;
+      return;
+    }
+
+    const result = await migrateFromFormat(input, output, format as Parameters<typeof migrateFromFormat>[2]);
+    console.log(`Migration complete: ${result.tokensMigrated} tokens migrated from ${result.inputFormat}`);
+    console.log(`Output: ${result.outputPath}`);
+    if (result.warnings.length > 0) {
+      console.log("Warnings:");
+      for (const w of result.warnings) console.log(`  ⚠️  ${w}`);
+    }
     return;
   }
 

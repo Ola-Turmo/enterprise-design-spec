@@ -41,7 +41,8 @@
     "types": "tsx src/cli.ts types",
     "init": "tsx src/cli.ts init",
     "playground": "tsx src/cli.ts playground",
-    "figma:pull": "tsx src/cli.ts figma pull",
+    "snapshot": "tsx src/cli.ts snapshot",
+    "migrate": "tsx src/cli.ts migrate",
     "figma:push": "tsx src/cli.ts figma push",
     "prepublishOnly": "npm run build",
     "postpublish": "echo 'Published successfully!'"

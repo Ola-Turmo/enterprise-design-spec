@@ -1,0 +1,30 @@
+{
+  "snapshot": {
+    "total": 135,
+    "byType": {
+      "color": 57,
+      "fontFamily": 3,
+      "dimension": 44,
+      "fontWeight": 4,
+      "shadow": 4,
+      "duration": 5,
+      "cubicBezier": 5,
+      "number": 13
+    },
+    "byGroup": {
+      "color": 57,
+      "font": 24,
+      "space": 12,
+      "radius": 6,
+      "shadow": 4,
+      "motion": 10,
+      "zIndex": 8,
+      "breakpoint": 5,
+      "opacity": 5,
+      "borderWidth": 4
+    },
+    "tokenCount": 135
+  },
+  "tokenCount": 135,
+  "lastUpdated": "2026-04-22T16:22:05.153Z"
+}

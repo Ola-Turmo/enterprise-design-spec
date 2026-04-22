@@ -1,0 +1,159 @@
+name: Token PR Bot
+
+on:
+  pull_request:
+    paths:
+      - 'tokens/**/*.json'
+      - 'examples/**/tokens/**/*.json'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  token-pr-bot:
+    name: Token Diff & Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run token validation
+        id: validate
+        run: |
+          echo "## Token Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Validate core tokens
+          echo "### Core Tokens" >> $GITHUB_STEP_SUMMARY
+          if npx tsx src/cli.ts validate --root . 2>&1; then
+            echo "✅ Validation passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Validation failed" >> $GITHUB_STEP_SUMMARY
+            echo "::error::Core token validation failed"
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+      - name: Check WCAG contrast
+        id: contrast
+        run: |
+          echo "### WCAG Contrast Check" >> $GITHUB_STEP_SUMMARY
+          if npx tsx src/cli.ts contrast --root . 2>&1; then
+            echo "✅ All color pairs pass WCAG 4.5:1" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Contrast check failed — review failing pairs" >> $GITHUB_STEP_SUMMARY
+            echo "::warning::WCAG contrast check failed"
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+      - name: Resolve aliases
+        id: aliases
+        run: |
+          echo "### Alias Resolution" >> $GITHUB_STEP_SUMMARY
+          if npx tsx src/cli.ts aliases --root . 2>&1; then
+            echo "✅ All aliases resolve correctly" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Broken alias references found" >> $GITHUB_STEP_SUMMARY
+            echo "::error::Broken alias references detected"
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+      - name: Generate token diff
+        id: diff
+        run: |
+          # Get base branch
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          
+          echo "### Token Changes" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Compare token files
+          git diff --name-only $BASE_SHA -- tokens/ | while read -r file; do
+            echo "**Changed:** \`$file\`" >> $GITHUB_STEP_SUMMARY
+          done
+          
+          # Count token additions/removals
+          ADDED=$(git diff --diff-filter=A $BASE_SHA -- tokens/ | grep -c '"\$value"' || true)
+          REMOVED=$(git diff --diff-filter=D $BASE_SHA -- tokens/ | grep -c '"\$value"' || true)
+          MODIFIED=$(git diff --diff-filter=M $BASE_SHA -- tokens/ | grep -c '"\$value"' || true)
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Change Type | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Added | $ADDED |" >> $GITHUB_STEP_SUMMARY
+          echo "| Removed | $REMOVED |" >> $GITHUB_STEP_SUMMARY
+          echo "| Modified | $MODIFIED |" >> $GITHUB_STEP_SUMMARY
+          
+          echo "added=$ADDED" >> $GITHUB_OUTPUT
+          echo "removed=$REMOVED" >> $GITHUB_OUTPUT
+          echo "modified=$MODIFIED" >> $GITHUB_OUTPUT
+
+      - name: Export tokens (verify build)
+        id: export
+        run: |
+          echo "### Export Verification" >> $GITHUB_STEP_SUMMARY
+          if npx tsx src/cli.ts export --root . --output dist/tokens 2>&1; then
+            echo "✅ Token export succeeded" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Token export failed" >> $GITHUB_STEP_SUMMARY
+            echo "::error::Token export failed"
+          fi
+
+      - name: Generate TypeScript types (verify build)
+        id: types
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### TypeScript Types" >> $GITHUB_STEP_SUMMARY
+          if npx tsx src/cli.ts types --root . --output dist/tokens/tokens.d.ts 2>&1; then
+            echo "✅ Type generation succeeded" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Type generation failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Post PR comment
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = fs.readFileSync(process.env.GITHUB_STEP_SUMMARY, 'utf8');
+            
+            const body = `## 🎨 Token PR Bot Report
+            
+            ${summary}
+            
+            ---
+            *Generated by enterprise-design-spec PR Bot*`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            });
+
+      - name: Upload playground artifact
+        if: always()
+        run: |
+          npx tsx src/cli.ts playground --root . --output dist/tokens/playground.html
+        continue-on-error: true
+
+      - name: Upload playground
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: token-playground
+          path: dist/tokens/playground.html
+          retention-days: 7
