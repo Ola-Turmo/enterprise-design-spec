@@ -92,6 +92,31 @@ npm run diff -- --base ./tokens-v1 --head ./tokens-v2
 | `types` | Generate TypeScript type definitions | `--root`, `--output` |
 | `init` | Scaffold new brand system | `--root`, `--name` |
 | `figma` | Sync with Figma Variables | `pull/push`, `--file-key`, `--token`, `--output` |
+| `watch` | File watcher with debounce auto-regenerate | `--root`, `--debounce`, `--commands` |
+| `changelog` | Generate token changelog from git history | `--from`, `--to`, `--output` |
+| `monorepo` | Multi-brand scanner with parallel builds | `--root`, `--parallel` |
+| `dashboard` | Terminal UI with token health score | `--root` |
+| `lint-commit` | Lore Commit Protocol message linter | `--message`, `--file` |
+| `format` | Token JSON formatter + linter | `--check`, `--fix` |
+| `diff-viewer` | Standalone HTML token diff viewer | `--base`, `--head`, `--output` |
+| `visualize` | ASCII color palette bars + type specimens | `--type`, `--root` |
+| `prepublish` | Pre-release checklist validator | `--verbose` |
+
+### Local Automation
+
+```bash
+# Install husky pre-commit hook (auto-validates tokens before every commit)
+npx husky install
+
+# Watch mode — auto-regenerate outputs on token file changes
+npm run watch
+
+# Pre-publish checklist (validates package.json, README, exports, types)
+npm run prepublish
+
+# Lore Commit Protocol linter (standalone or as commit-msg hook)
+npm run lint-commit -- --message "feat(tokens): add violet scale"
+```
 
 ## Style Dictionary Integration
 
