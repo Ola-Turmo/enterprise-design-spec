@@ -1,0 +1,31 @@
+{
+  "id": "nexus.logo.primary.horizontal",
+  "title": "Nexus Primary Horizontal Logo",
+  "assetType": "logo",
+  "subtype": "horizontal",
+  "status": "published",
+  "maturity": "ga",
+  "brand": "nexus",
+  "channels": ["web", "mobile", "print", "social"],
+  "usageContexts": ["header", "footer", "marketing", "documentation"],
+  "owners": {
+    "design": "@nexus/design-team",
+    "engineering": "@nexus/frontend"
+  },
+  "sourceOfTruth": {
+    "tool": "figma",
+    "location": "https://figma.com/file/nexus-brand/Logo-Assets"
+  },
+  "editableMasters": ["figma://nexus-brand/logo-primary-horizontal"],
+  "tokenRefs": ["color.background.brand.default", "logo.primary.foreground"],
+  "themes": ["light", "dark"],
+  "formatProfiles": ["svg", "png-light", "png-dark", "pdf"],
+  "accessibility": {
+    "altText": "Nexus logo - a stylized N symbol representing connectivity",
+    "wcagTarget": "AA",
+    "decorativeWhenAdjacentText": true,
+    "notes": ["Minimum size: 120px width in digital contexts"]
+  },
+  "version": "1.0.0",
+  "publishedAt": "2026-04-22T00:00:00.000Z"
+}

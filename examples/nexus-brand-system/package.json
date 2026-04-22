@@ -1,0 +1,14 @@
+{
+  "name": "nexus-brand-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "tsx ../../src/cli.ts validate --root .",
+    "catalog": "tsx ../../src/cli.ts catalog --root .",
+    "contrast": "tsx ../../src/cli.ts contrast --root .",
+    "export": "tsx ../../src/cli.ts export --root .",
+    "aliases": "tsx ../../src/cli.ts aliases --root .",
+    "types": "tsx ../../src/cli.ts types --root ."
+  }
+}
