@@ -40,6 +40,7 @@
     "diff": "tsx src/cli.ts diff",
     "types": "tsx src/cli.ts types",
     "init": "tsx src/cli.ts init",
+    "playground": "tsx src/cli.ts playground",
     "figma:pull": "tsx src/cli.ts figma pull",
     "figma:push": "tsx src/cli.ts figma push",
     "prepublishOnly": "npm run build",

@@ -6,6 +6,7 @@ import { checkContrast } from "./lib/contrast.js";
 import { exportTokens } from "./lib/export.js";
 import { resolveAliases } from "./lib/alias.js";
 import { generateTypes } from "./lib/types.js";
+import { generatePlayground } from "./lib/playground.js";
 import { writeJsonFile } from "./lib/fs.js";
 
 async function main(): Promise<void> {
@@ -176,6 +177,13 @@ async function main(): Promise<void> {
     console.log(`  npm install`);
     console.log(`  npm run validate`);
     console.log(`  npm run export`);
+    return;
+  }
+
+  if (command === "playground") {
+    const output = resolveFlag("--output") ?? path.resolve(root, "dist/tokens/playground.html");
+    const result = await generatePlayground(root, output);
+    console.log(`Generated playground at ${result.outputPath} (${result.tokenCount} tokens)`);
     return;
   }
 
