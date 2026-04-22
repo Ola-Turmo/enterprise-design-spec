@@ -179,6 +179,46 @@ async function main(): Promise<void> {
     return;
   }
 
+  if (command === "figma") {
+    const action = args[1];
+    const fileKey = resolveFlag("--file-key");
+    const token = resolveFlag("--token") ?? process.env.FIGMA_ACCESS_TOKEN;
+
+    if (!fileKey || !token) {
+      console.error("Usage:");
+      console.error("  enterprise-design-spec figma pull --file-key <key> --token <token> [--output <dir>]");
+      console.error("  enterprise-design-spec figma push --file-key <key> --token <token> [--root <tokens-dir>]");
+      process.exitCode = 1;
+      return;
+    }
+
+    const { pullFromFigma, pushToFigma } = await import("./lib/figma.js");
+    const config = {
+      fileKey,
+      personalAccessToken: token,
+      outputDir: resolveFlag("--output"),
+    };
+
+    if (action === "pull") {
+      const result = await pullFromFigma(config);
+      console.log(`\nFigma Sync (Pull)\n`);
+      console.log(`  Direction: Figma → Git`);
+      console.log(`  Tokens written: ${result.tokensWritten}`);
+      console.log(`  Collections processed: ${result.collectionsProcessed}`);
+      console.log(`  Output: ${result.outputPath}`);
+    } else if (action === "push") {
+      const result = await pushToFigma({ ...config, outputDir: path.resolve(root) });
+      console.log(`\nFigma Sync (Push)\n`);
+      console.log(`  Direction: Git → Figma`);
+      console.log(`  Tokens processed: ${result.tokensWritten}`);
+      console.log(`  Collections: ${result.collectionsProcessed}`);
+    } else {
+      console.error("Unknown action. Use 'pull' or 'push'.");
+      process.exitCode = 1;
+    }
+    return;
+  }
+
   printHelp();
   process.exitCode = 1;
 

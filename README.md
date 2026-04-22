@@ -89,6 +89,9 @@ npm run diff -- --base ./tokens-v1 --head ./tokens-v2
 | `export` | Token → CSS/Tailwind/SCSS/JSON | `--root`, `--output`, `--format` |
 | `aliases` | Token alias resolution + circular ref detection | `--root` |
 | `diff` | Compare two token sets | `--base`, `--head`, `--root` |
+| `types` | Generate TypeScript type definitions | `--root`, `--output` |
+| `init` | Scaffold new brand system | `--root`, `--name` |
+| `figma` | Sync with Figma Variables | `pull/push`, `--file-key`, `--token`, `--output` |
 
 ## Style Dictionary Integration
 

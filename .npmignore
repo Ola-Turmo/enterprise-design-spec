@@ -1,0 +1,29 @@
+# .npmignore for enterprise-design-spec
+
+# Source files (we publish compiled dist + tokens + schemas + templates)
+src/
+*.ts
+tsconfig.json
+
+# Development
+node_modules/
+.git/
+.github/
+.eslint*
+.prettier*
+
+# Examples and docs (not needed for package consumption)
+examples/
+docs/
+DESIGN.md
+BRAND.md
+CONTRIBUTING.md
+CHANGELOG.md
+
+# Skills (not needed for runtime)
+skills/
+
+# Test files
+*.test.ts
+*.spec.ts
+__tests__/

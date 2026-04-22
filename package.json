@@ -39,7 +39,11 @@
     "export:all": "tsx src/cli.ts export --format all",
     "diff": "tsx src/cli.ts diff",
     "types": "tsx src/cli.ts types",
-    "init": "tsx src/cli.ts init"
+    "init": "tsx src/cli.ts init",
+    "figma:pull": "tsx src/cli.ts figma pull",
+    "figma:push": "tsx src/cli.ts figma push",
+    "prepublishOnly": "npm run build",
+    "postpublish": "echo 'Published successfully!'"
   },
   "keywords": [
     "design-system",
