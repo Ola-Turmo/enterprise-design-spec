@@ -1,0 +1,25 @@
+{
+  "id": "marketing.social.linkedin.post.announcement",
+  "title": "LinkedIn Post \u2014 Feature Announcement",
+  "assetType": "social.post.linkedin",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "linkedin"
+  ],
+  "formatProfiles": [
+    "png-1200x627",
+    "png-1200x1200"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.semantic.success"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus feature announcement LinkedIn post image",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "LinkedIn feed post image. Professional purple brand color. Clean minimal design with headline text area. 1200x627px landscape."
+}

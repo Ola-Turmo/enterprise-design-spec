@@ -1,0 +1,27 @@
+{
+  "id": "icon.ui.star",
+  "title": "UI Icon \u2014 Star Rating",
+  "assetType": "icon.ui",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "svg-24",
+    "png-24",
+    "png-48"
+  ],
+  "tokenRefs": [
+    "color.icon.default",
+    "color.brand.accent"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Star rating icon",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Star rating icon. Minimalist line icon. Gold/yellow star. 24x24px SVG."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "marketing.social.linkedin.carousel",
+  "title": "LinkedIn Carousel \u2014 Case Study",
+  "assetType": "social.post.linkedin-carousel",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "linkedin"
+  ],
+  "formatProfiles": [
+    "png-1080x1350"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.text.default"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus case study LinkedIn carousel cover",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "LinkedIn carousel cover. Purple gradient background. Professional typography. Portrait 1080x1350px format. Corporate case study style."
+}

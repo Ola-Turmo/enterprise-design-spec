@@ -1,0 +1,27 @@
+{
+  "id": "icon.ui.arrow-right",
+  "title": "UI Icon \u2014 Arrow Right",
+  "assetType": "icon.ui",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile",
+    "email"
+  ],
+  "formatProfiles": [
+    "svg-24",
+    "png-24",
+    "png-48"
+  ],
+  "tokenRefs": [
+    "color.icon.default"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Arrow right icon",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "UI arrow right icon. Minimalist line icon. Dark navy color. 24x24px SVG."
+}

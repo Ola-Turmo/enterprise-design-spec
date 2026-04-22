@@ -1,0 +1,24 @@
+{
+  "id": "marketing.social.video.thumbnail.linkedin",
+  "title": "LinkedIn Video Thumbnail",
+  "assetType": "video.thumbnail.youtube",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "linkedin"
+  ],
+  "formatProfiles": [
+    "jpg-1200x675",
+    "jpg-1200x1200"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus LinkedIn video thumbnail",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "LinkedIn video thumbnail. Purple gradient with play button overlay. Bold text space. High contrast. 1200x675px landscape."
+}

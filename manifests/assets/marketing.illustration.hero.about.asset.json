@@ -1,0 +1,26 @@
+{
+  "id": "marketing.illustration.hero.about",
+  "title": "Hero Illustration \u2014 About Us",
+  "assetType": "illustration.hero",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "presentation"
+  ],
+  "formatProfiles": [
+    "svg-1200x600",
+    "png-2400x1200"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus about us page hero illustration",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Hero illustration for About Us page. Wide 1200x600px format. Purple and blue gradient. Modern tech company aesthetic. Detailed scene with people collaborating."
+}

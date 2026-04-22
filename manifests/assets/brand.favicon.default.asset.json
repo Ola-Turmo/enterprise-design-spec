@@ -1,0 +1,27 @@
+{
+  "id": "brand.favicon.default",
+  "title": "Favicon \u2014 Default",
+  "assetType": "logo.favicon",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web"
+  ],
+  "formatProfiles": [
+    "svg-32",
+    "ico-32",
+    "png-16",
+    "png-32",
+    "png-48"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus website favicon",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Website favicon. Purple rounded square with white N letter. Clean minimal icon. Multiple sizes 16x16 to 48x48."
+}

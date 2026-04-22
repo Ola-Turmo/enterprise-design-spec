@@ -1,0 +1,25 @@
+{
+  "id": "marketing.email.header.default",
+  "title": "Email Header \u2014 Default",
+  "assetType": "email.header",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "email"
+  ],
+  "formatProfiles": [
+    "png-600x100",
+    "png-1200x200"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.background.email"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus email newsletter header",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Email newsletter header. Purple gradient bar with logo. 600x100px wide banner."
+}

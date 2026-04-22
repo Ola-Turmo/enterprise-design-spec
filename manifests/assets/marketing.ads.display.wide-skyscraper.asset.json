@@ -1,0 +1,24 @@
+{
+  "id": "marketing.ads.display.wide-skyscraper",
+  "title": "Display Ad \u2014 Wide Skyscraper",
+  "assetType": "advertising.display.wide-skyscraper",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "programmatic-display"
+  ],
+  "formatProfiles": [
+    "png-160x600",
+    "png-300x600"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus wide skyscraper display ad",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Wide skyscraper display ad. Tall narrow format. Purple brand. Bold typography. CTA button."
+}

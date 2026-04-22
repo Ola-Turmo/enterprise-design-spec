@@ -1,68 +1,44 @@
 {
+  "$schema": "../schemas/asset-manifest.schema.json",
   "id": "brand.logo.primary.horizontal",
-  "title": "Primary horizontal logo",
-  "assetType": "logo",
-  "subtype": "wordmark-lockup",
-  "status": "published",
-  "maturity": "ga",
-  "brand": "acme",
+  "title": "Primary Horizontal Logo",
+  "description": "Main brand logo in horizontal layout with symbol + wordmark. Used in header, footer, and marketing materials.",
+  "assetType": "logo.combination",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
   "channels": [
     "web",
-    "email",
     "print",
+    "social",
+    "email",
     "presentation"
-  ],
-  "usageContexts": [
-    "site-header",
-    "proposal-cover",
-    "invoice",
-    "deck-title"
-  ],
-  "owners": {
-    "design": "brand-team",
-    "engineering": "design-systems"
-  },
-  "approvers": {
-    "brand": [
-      "design-director"
-    ],
-    "a11y": [
-      "accessibility-lead"
-    ]
-  },
-  "sourceOfTruth": {
-    "tool": "Figma",
-    "location": "Brand Library / Logos / Approved"
-  },
-  "editableMasters": [
-    "source/brand/logo/acme-logo-master.fig",
-    "source/brand/logo/acme-logo-master.ai"
-  ],
-  "tokenRefs": [
-    "color.background.brand.default",
-    "logo.primary.foreground",
-    "font.family.sans"
   ],
   "themes": [
     "light",
-    "dark",
-    "mono"
+    "dark"
   ],
   "formatProfiles": [
-    "svg-web",
-    "png-raster",
-    "pdfx4-print"
+    "svg-light",
+    "svg-dark",
+    "png-1x",
+    "png-2x",
+    "png-4x"
   ],
-  "accessibility": {
-    "altText": "Acme logo",
-    "wcagTarget": "WCAG 2.2 AA",
-    "decorativeWhenAdjacentText": true,
-    "notes": [
-      "Mark decorative when the company name is already present in adjacent text.",
-      "Do not place on low-contrast photographic backgrounds without a contrast plate."
-    ]
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary",
+    "color.brand.logoBackground"
+  ],
+  "dimensions": {
+    "w": 240,
+    "h": 60,
+    "ratio": "4:1"
   },
-  "version": "2.1.0",
-  "changeType": "minor",
-  "publishedAt": "2026-04-19T12:00:00Z"
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus logo \u2014 horizontal layout with purple hexagon symbol",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Professional brand logo lockup. Purple hexagon icon on the left, wordmark 'NEXUS' on the right. Clean white background. Minimalist corporate design. Horizontal layout 4:1 aspect ratio. Vector style, no gradients."
 }

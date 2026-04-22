@@ -1,0 +1,26 @@
+{
+  "id": "product.error-state.default",
+  "title": "Error State \u2014 Default",
+  "assetType": "product.error-state",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "png-400x300",
+    "png-800x600"
+  ],
+  "tokenRefs": [
+    "color.semantic.error",
+    "color.background.site"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Error state illustration \u2014 something went wrong",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Error state illustration. Clean minimal design with red error circle icon. 'Something went wrong' text space. Light background."
+}

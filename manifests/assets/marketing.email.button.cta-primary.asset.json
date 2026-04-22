@@ -1,0 +1,25 @@
+{
+  "id": "marketing.email.button.cta-primary",
+  "title": "Email CTA Button \u2014 Primary",
+  "assetType": "email.button",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "email"
+  ],
+  "formatProfiles": [
+    "png-200x50",
+    "png-300x60"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.text.inverse"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus email CTA button \u2014 Get Started",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Email CTA button graphic. Purple background with white text 'Get Started'. Clean rounded rectangle. Drop shadow. 200x50px."
+}

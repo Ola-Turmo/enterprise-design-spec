@@ -1,0 +1,88 @@
+{
+  "$schema": "./schemas/publish.config.schema.json",
+  "name": "my-brand-assets",
+  "version": "1.0.0",
+
+  "destinations": [
+    {
+      "type": "local",
+      "name": "releases",
+      "config": {
+        "outputPath": "./releases/assets",
+        "versioned": true,
+        "generateIndex": true
+      }
+    },
+    {
+      "type": "cdn",
+      "name": "bunny-cdn",
+      "config": {
+        "provider": "bunny",
+        "baseUrl": "https://assets.mybrand.com",
+        "bucket": "mybrand-assets",
+        "apiToken": "${BUNNY_API_TOKEN}"
+      }
+    },
+    {
+      "type": "npm",
+      "name": "npm-package",
+      "config": {
+        "packageName": "@mybrand/assets",
+        "distDir": "./dist/npm",
+        "tag": "latest",
+        "access": "public"
+      }
+    },
+    {
+      "type": "github-release",
+      "name": "github-release",
+      "config": {
+        "owner": "myorg",
+        "repo": "brand-assets",
+        "tag": "v1.0.0"
+      }
+    },
+    {
+      "type": "webhook",
+      "name": "cms-trigger",
+      "config": {
+        "url": "https://cms.mybrand.com/api/webhooks/assets",
+        "method": "POST",
+        "headers": {
+          "X-Webhook-Secret": "${WEBHOOK_SECRET}"
+        },
+        "secret": "${WEBHOOK_SECRET}"
+      }
+    }
+  ],
+
+  "rules": {
+    "autoPublish": {
+      "enabled": true,
+      "onStatus": ["approved", "published"],
+      "excludeTypes": ["brand.guidelines-pdf", "print.*"]
+    },
+    "scheduled": {
+      "social": {
+        "enabled": true,
+        "cron": "0 9 * * *",
+        "channelFilter": ["instagram", "twitter-x", "linkedin"],
+        "statusFilter": ["approved"]
+      },
+      "display-ads": {
+        "enabled": true,
+        "cron": "0 */4 * * *",
+        "channelFilter": ["programmatic-display"],
+        "statusFilter": ["approved"]
+      }
+    },
+    "versioning": {
+      "strategy": "semver",
+      "bumpOn": {
+        "published": "patch",
+        "approved": "minor",
+        "major": "major"
+      }
+    }
+  }
+}

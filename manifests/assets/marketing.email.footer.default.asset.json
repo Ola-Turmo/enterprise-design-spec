@@ -1,0 +1,24 @@
+{
+  "id": "marketing.email.footer.default",
+  "title": "Email Footer Banner",
+  "assetType": "email.footer",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "email"
+  ],
+  "formatProfiles": [
+    "png-600x80"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.text.inverse"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus email footer",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Email footer banner. Dark purple background with white logo and social icons. 600x80px."
+}

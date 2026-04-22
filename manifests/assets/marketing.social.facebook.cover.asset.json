@@ -1,0 +1,24 @@
+{
+  "id": "marketing.social.facebook.cover",
+  "title": "Facebook Page Cover",
+  "assetType": "social.banner.facebook",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "facebook"
+  ],
+  "formatProfiles": [
+    "jpg-820x312",
+    "jpg-1640x624"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus Facebook page cover photo",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Facebook page cover image. Purple gradient with geometric shapes. Wide format 820x312px. Clean professional design."
+}

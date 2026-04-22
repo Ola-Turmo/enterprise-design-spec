@@ -1,0 +1,25 @@
+{
+  "id": "marketing.ads.display.large-mobile",
+  "title": "Display Ad \u2014 Large Mobile",
+  "assetType": "advertising.display.large-mobile",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "programmatic-display",
+    "google-ads-mobile"
+  ],
+  "formatProfiles": [
+    "png-320x100",
+    "png-320x50"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus mobile display ad",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Mobile display ad banner. Compact wide format. Bold brand color. Clear CTA text. High legibility on small screens."
+}

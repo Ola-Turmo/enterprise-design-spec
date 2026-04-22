@@ -1,0 +1,25 @@
+{
+  "id": "icon.featured.home",
+  "title": "Featured Icon \u2014 Home",
+  "assetType": "icon.featured",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "svg-48",
+    "png-48"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Home feature icon",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Home feature icon. Purple filled circle with white house icon inside. 48x48px. Modern UI icon style."
+}

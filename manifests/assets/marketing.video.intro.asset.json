@@ -1,0 +1,26 @@
+{
+  "id": "marketing.video.intro",
+  "title": "Video Intro \u2014 Brand Animation Frame",
+  "assetType": "video.intro-frame",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "youtube",
+    "presentation"
+  ],
+  "formatProfiles": [
+    "png-1920x1080",
+    "png-3840x2160"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus brand video intro frame",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Brand video intro frame. Dark navy background with purple gradient. Large centered logo. Cinematic 1920x1080px."
+}

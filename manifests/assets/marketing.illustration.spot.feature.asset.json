@@ -1,0 +1,29 @@
+{
+  "id": "marketing.illustration.spot.feature",
+  "title": "Spot Illustration \u2014 Feature Highlight",
+  "assetType": "illustration.spot",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile",
+    "presentation",
+    "print"
+  ],
+  "formatProfiles": [
+    "svg-400x300",
+    "png-800x600"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary",
+    "color.background.site"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus feature highlight spot illustration",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Modern spot illustration for web feature. Purple and blue brand colors on white background. Clean vector illustration style. Abstract geometric composition with floating UI elements."
+}

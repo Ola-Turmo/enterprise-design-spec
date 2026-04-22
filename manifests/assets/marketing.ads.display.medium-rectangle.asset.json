@@ -1,0 +1,26 @@
+{
+  "id": "marketing.ads.display.medium-rectangle",
+  "title": "Display Ad \u2014 Medium Rectangle",
+  "assetType": "advertising.display.medium-rectangle",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "programmatic-display",
+    "google-display",
+    "meta-display"
+  ],
+  "formatProfiles": [
+    "png-300x250"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.semantic.cta"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus display ad medium rectangle 300x250",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "IAB medium rectangle display ad 300x250. Purple brand color. Bold typography. High CTR design with CTA."
+}

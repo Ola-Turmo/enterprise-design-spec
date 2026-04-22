@@ -1,0 +1,27 @@
+{
+  "id": "product.placeholder.default",
+  "title": "Image Placeholder \u2014 Default",
+  "assetType": "product.placeholder",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "png-800x600",
+    "png-400x300",
+    "png-1200x900"
+  ],
+  "tokenRefs": [
+    "color.background.muted",
+    "opacity.skeleton"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Loading placeholder",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Shimmer skeleton loading placeholder. Light gray background with animated shimmer wave. Neutral minimal."
+}

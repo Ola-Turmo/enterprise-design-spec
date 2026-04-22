@@ -1,0 +1,24 @@
+{
+  "id": "marketing.social.twitter-x.post",
+  "title": "X/Twitter Post \u2014 Thread Visual",
+  "assetType": "social.post.twitter-x",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "twitter-x"
+  ],
+  "formatProfiles": [
+    "png-1200x675",
+    "png-1200x1200"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus thread visual for X/Twitter",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "X/Twitter post image. Bold graphic with brand purple color. Modern social media design. 1200x675px landscape format."
+}

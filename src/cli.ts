@@ -2,6 +2,8 @@
 
 import path from "node:path";
 import { buildCatalog, validateProject } from "./lib/catalog.js";
+import { assetCLI } from "./lib/assets/cli.js";
+import { runSchedulerTick } from "./lib/assets/scheduler.js";
 import { checkContrast } from "./lib/contrast.js";
 import { exportTokens } from "./lib/export.js";
 import { resolveAliases } from "./lib/alias.js";
@@ -374,6 +376,19 @@ async function main(): Promise<void> {
     const verbose = process.argv.includes("--verbose");
     const result = await runPrepublishCheck(root, verbose);
     process.exit(result.ready ? 0 : 1);
+    return;
+  }
+
+  if (command === "asset") {
+    const subArgs = args.slice(1);
+    await assetCLI(subArgs, root);
+    return;
+  }
+
+  if (command === "schedule" || command === "scheduler") {
+    const subArgs = args.slice(1);
+    const configPath = subArgs[0] ?? undefined;
+    await runSchedulerTick(root, configPath);
     return;
   }
 

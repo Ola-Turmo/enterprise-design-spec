@@ -1,0 +1,26 @@
+{
+  "id": "marketing.social.youtube.banner",
+  "title": "YouTube Channel Art",
+  "assetType": "social.banner.youtube",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "youtube"
+  ],
+  "formatProfiles": [
+    "jpg-2560x1440",
+    "jpg-2048x1152",
+    "jpg-1280x720"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus YouTube channel art",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "YouTube channel banner. Bold purple brand color. Clean geometric design with logo placement areas. 2560x1440px cinematic wide format. High contrast."
+}

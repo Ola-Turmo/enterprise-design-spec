@@ -1,0 +1,32 @@
+{
+  "id": "product.app-icon.default",
+  "title": "App Icon \u2014 Default",
+  "assetType": "icon.app",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "ios",
+    "android",
+    "web"
+  ],
+  "formatProfiles": [
+    "png-1024",
+    "png-512",
+    "png-256",
+    "png-128",
+    "png-64",
+    "png-48",
+    "png-32",
+    "png-16"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus app icon",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Mobile app icon. Purple hexagon with white N letter. Clean modern iOS Android app icon design. Square format."
+}

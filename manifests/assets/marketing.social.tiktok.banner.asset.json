@@ -1,0 +1,23 @@
+{
+  "id": "marketing.social.tiktok.banner",
+  "title": "TikTok Profile Banner",
+  "assetType": "social.banner.instagram",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "tiktok"
+  ],
+  "formatProfiles": [
+    "jpg-2000x2000"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus TikTok profile banner",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "TikTok profile banner. Bold colorful design with purple brand colors. Square format 2000x2000px. Modern Gen-Z aesthetic."
+}

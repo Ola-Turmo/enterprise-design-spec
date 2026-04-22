@@ -1,0 +1,24 @@
+{
+  "id": "marketing.social.whatsapp.sticker",
+  "title": "WhatsApp Sticker \u2014 Brand",
+  "assetType": "illustration.spot",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "whatsapp"
+  ],
+  "formatProfiles": [
+    "png-512",
+    "webp-512"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus brand WhatsApp sticker",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "WhatsApp sticker. Purple circle with white N letter logo. Fun brand sticker style. Transparent background. 512x512px."
+}

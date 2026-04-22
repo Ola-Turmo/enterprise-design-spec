@@ -1,0 +1,25 @@
+{
+  "id": "marketing.social.instagram.story",
+  "title": "Instagram Story \u2014 Product Launch",
+  "assetType": "social.story.instagram",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "instagram"
+  ],
+  "formatProfiles": [
+    "jpg-1080x1920",
+    "jpg-1080x1080"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.accent"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus product launch Instagram story",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Instagram story for product launch. Vibrant purple gradient. Bold headline text space. Swipe up CTA area. 1080x1920px vertical mobile format."
+}

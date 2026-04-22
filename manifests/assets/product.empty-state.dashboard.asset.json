@@ -1,0 +1,26 @@
+{
+  "id": "product.empty-state.dashboard",
+  "title": "Empty State \u2014 Dashboard",
+  "assetType": "product.empty-state",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "png-400x300",
+    "png-600x400"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.text.muted"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Empty dashboard state illustration",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Empty state illustration. Purple accent circle with dotted outline. Friendly illustration showing empty dashboard. Light background."
+}

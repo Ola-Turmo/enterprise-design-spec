@@ -1,0 +1,25 @@
+{
+  "id": "marketing.print.report-cover",
+  "title": "Annual Report Cover \u2014 A4",
+  "assetType": "print.report-cover",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "print"
+  ],
+  "formatProfiles": [
+    "pdf-a4-portrait",
+    "jpg-a4"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus annual report cover",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Annual report cover. Dark navy background with purple geometric pattern. Large brand logo. Bold title typography. A4 portrait."
+}

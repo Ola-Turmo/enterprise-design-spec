@@ -1,0 +1,26 @@
+{
+  "id": "marketing.social.linkedin.company-banner",
+  "title": "LinkedIn Company Banner",
+  "assetType": "social.banner.linkedin",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "linkedin",
+    "web"
+  ],
+  "formatProfiles": [
+    "jpg-1128x191",
+    "jpg-300x50"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus LinkedIn company page banner",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Professional LinkedIn company banner. Dark navy background with subtle purple gradient accent. Clean typography layout. Space for company name and tagline. 1128x191px wide format."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "marketing.og.product-launch",
+  "title": "OG Image \u2014 Product Launch",
+  "assetType": "product.og-image",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "linkedin",
+    "twitter-x",
+    "facebook"
+  ],
+  "formatProfiles": [
+    "png-og-1200x630",
+    "png-twitter-1200x628",
+    "png-linkedin-1200x627"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary",
+    "color.background.site"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus product launch \u2014 Open Graph preview image",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Open Graph link preview image 1200x630. Brand purple. Clean minimal design with headline text space. Optimized for Facebook LinkedIn social sharing."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "marketing.ads.display.half-page",
+  "title": "Display Ad \u2014 Half Page",
+  "assetType": "advertising.display.half-page",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "programmatic-display"
+  ],
+  "formatProfiles": [
+    "png-300x600"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus half page display ad 300x600",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "IAB half page display ad 300x600. Tall portrait format. Purple gradient. Bold headline with CTA button."
+}

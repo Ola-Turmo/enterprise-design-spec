@@ -1,0 +1,25 @@
+{
+  "id": "marketing.email.hero.default",
+  "title": "Email Hero Image",
+  "assetType": "email.hero",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "email"
+  ],
+  "formatProfiles": [
+    "png-600x300",
+    "png-1200x600"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus email newsletter hero image",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Email hero image. Wide 600x300px. Brand purple gradient. Space for headline text. Clean modern design."
+}

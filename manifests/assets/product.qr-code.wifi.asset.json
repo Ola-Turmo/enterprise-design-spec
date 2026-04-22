@@ -1,0 +1,25 @@
+{
+  "id": "product.qr-code.wifi",
+  "title": "QR Code \u2014 WiFi Access",
+  "assetType": "dataviz.qr-code",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "print",
+    "office"
+  ],
+  "formatProfiles": [
+    "svg-200"
+  ],
+  "tokenRefs": [
+    "color.qr.foreground",
+    "color.qr.background"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "QR code for WiFi network",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "QR code SVG for WiFi. Dark modules on white. High contrast scan-friendly."
+}

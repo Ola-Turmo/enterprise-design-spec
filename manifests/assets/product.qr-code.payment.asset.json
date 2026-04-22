@@ -1,0 +1,29 @@
+{
+  "id": "product.qr-code.payment",
+  "title": "QR Code \u2014 Payment Link",
+  "assetType": "dataviz.qr-code",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "print",
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "svg-200",
+    "svg-300",
+    "png-200",
+    "png-300"
+  ],
+  "tokenRefs": [
+    "color.qr.foreground",
+    "color.qr.background"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "QR code for payment link",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "QR code SVG. Dark navy modules on white background. High contrast. Rounded corners."
+}

@@ -1,8 +1,10 @@
 import matter from "gray-matter";
 import path from "node:path";
-import Ajv2020 from "ajv/dist/2020.js";
+import { Ajv2020 } from "ajv/dist/2020.js";
 import type { ErrorObject } from "ajv";
-import addFormats from "ajv-formats";
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const addFormatsFn = require("ajv-formats") as (ajv: unknown) => void;
 import { access } from "node:fs/promises";
 import { findFiles, readJsonFile, readTextFile } from "./fs.js";
 import { collectTokenPaths } from "./tokens.js";
@@ -56,7 +58,7 @@ export async function validateProject(root: string): Promise<ValidationResult> {
   ]);
 
   const ajv = new Ajv2020({ allErrors: true, strict: false });
-  addFormats(ajv);
+  addFormatsFn(ajv);
 
   const validateAsset = ajv.compile(assetSchema);
   const validateDoc = ajv.compile(docSchema);

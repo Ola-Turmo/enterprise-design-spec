@@ -1,0 +1,25 @@
+{
+  "id": "marketing.social.instagram.post",
+  "title": "Instagram Post \u2014 Product Showcase",
+  "assetType": "social.post.instagram",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "instagram"
+  ],
+  "formatProfiles": [
+    "jpg-1080x1080",
+    "jpg-1350x1080"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus product showcase Instagram post",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Instagram post. Vibrant purple brand palette. Square 1080x1080px format. Modern lifestyle aesthetic with product showcase."
+}

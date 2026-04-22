@@ -1,0 +1,24 @@
+{
+  "id": "marketing.video.youtube.thumbnail",
+  "title": "YouTube Thumbnail",
+  "assetType": "video.thumbnail.youtube",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "youtube"
+  ],
+  "formatProfiles": [
+    "jpg-1280x720"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus YouTube video thumbnail",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "YouTube video thumbnail. Bold text overlay. High contrast. Purple brand color. 1280x720px. Eye-catching cinematic composition."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "marketing.presentation.slide-cover",
+  "title": "Presentation Slide \u2014 Cover",
+  "assetType": "illustration.hero",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "presentation"
+  ],
+  "formatProfiles": [
+    "png-1920x1080",
+    "png-1280x720"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus presentation cover slide",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Presentation cover slide. Dark navy background. Large centered purple logo. Title text space. Cinematic 1920x1080px."
+}

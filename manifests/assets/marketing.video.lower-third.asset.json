@@ -1,0 +1,24 @@
+{
+  "id": "marketing.video.lower-third",
+  "title": "Video Lower Third \u2014 Speaker Name",
+  "assetType": "video.lower-third",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "youtube",
+    "presentation"
+  ],
+  "formatProfiles": [
+    "png-1920x1080"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Video lower third graphic with speaker name",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Video lower third graphic. Semi-transparent purple gradient bar. Bold white text for speaker name and title. 1920x1080px."
+}

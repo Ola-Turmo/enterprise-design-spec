@@ -21,7 +21,7 @@ export async function runSnapshotTests(
   for (const tokenPath of tokenPaths) {
     const goldenPath = path.join(goldenDir, tokenPath);
     const tokens = await readJsonFile(tokenPath);
-    const snapshot = createSnapshot(tokens);
+    const snapshot = createSnapshot(tokens as Record<string, unknown>);
 
     try {
       const goldenContent = await readFile(goldenPath, "utf-8");
@@ -56,7 +56,7 @@ export async function updateGoldenFiles(
   for (const tokenPath of tokenPaths) {
     const goldenPath = path.join(goldenDir, tokenPath);
     const tokens = await readJsonFile(tokenPath);
-    const snapshot = createSnapshot(tokens);
+    const snapshot = createSnapshot(tokens as Record<string, unknown>);
 
     await mkdir(path.dirname(goldenPath), { recursive: true });
     await writeJsonFile(goldenPath, {

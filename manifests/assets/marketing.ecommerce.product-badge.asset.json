@@ -1,0 +1,25 @@
+{
+  "id": "marketing.ecommerce.product-badge",
+  "title": "Product Badge \u2014 New",
+  "assetType": "ecommerce.promotional-badge",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "png-80x80",
+    "svg-80"
+  ],
+  "tokenRefs": [
+    "color.semantic.success"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "New product badge",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Product badge. Green circle with white 'NEW' text. Clean overlay sticker. 80x80px."
+}

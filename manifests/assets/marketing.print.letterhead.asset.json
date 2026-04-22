@@ -1,0 +1,25 @@
+{
+  "id": "marketing.print.letterhead",
+  "title": "Letterhead \u2014 A4",
+  "assetType": "print.letterhead",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "print"
+  ],
+  "formatProfiles": [
+    "pdf-a4",
+    "svg-a4"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.text.default"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus company letterhead A4",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Corporate letterhead A4. White background. Purple header bar with logo. Clean professional layout. Print-ready."
+}

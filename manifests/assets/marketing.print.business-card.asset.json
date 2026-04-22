@@ -1,0 +1,26 @@
+{
+  "id": "marketing.print.business-card",
+  "title": "Business Card \u2014 Default",
+  "assetType": "print.business-card",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "print"
+  ],
+  "formatProfiles": [
+    "pdf-standard-3.5x2",
+    "pdf-premium-3.5x2",
+    "svg-3.5x2"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.text.default"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus employee business card",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Business card. White background with purple top bar. Clean modern layout. Name title company info. 3.5x2 inches print-ready."
+}

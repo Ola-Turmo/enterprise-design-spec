@@ -1,0 +1,25 @@
+{
+  "id": "marketing.ads.display.billboard",
+  "title": "Display Ad \u2014 Billboard",
+  "assetType": "advertising.display.billboard",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "programmatic-display",
+    "google-display"
+  ],
+  "formatProfiles": [
+    "png-970x250"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus billboard display ad 970x250",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "IAB billboard display ad 970x250. Wide format. Bold brand colors purple. Clear headline and CTA space."
+}

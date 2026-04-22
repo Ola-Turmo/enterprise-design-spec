@@ -1,0 +1,25 @@
+{
+  "id": "product.barcode.product-sku",
+  "title": "Barcode \u2014 Product SKU",
+  "assetType": "dataviz.barcode",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "print",
+    "logistics"
+  ],
+  "formatProfiles": [
+    "svg-200x60"
+  ],
+  "tokenRefs": [
+    "color.barcode.foreground",
+    "color.barcode.background"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Product barcode SKU-001",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Barcode SVG. EAN-13 style vertical bars. Dark on white. Human-readable digits below. 200x60px."
+}

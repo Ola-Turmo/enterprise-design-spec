@@ -1,0 +1,25 @@
+{
+  "id": "marketing.social.pinterest.pin",
+  "title": "Pinterest Pin \u2014 Article",
+  "assetType": "social.pin.pinterest",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "pinterest"
+  ],
+  "formatProfiles": [
+    "jpg-1000x1500",
+    "jpg-1000x800"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus article Pinterest pin",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Pinterest pin. Tall portrait format 1000x1500. Purple brand gradient. Bold headline text area. Clean vertical layout."
+}

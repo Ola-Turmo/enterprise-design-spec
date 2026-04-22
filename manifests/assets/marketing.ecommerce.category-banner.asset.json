@@ -1,0 +1,26 @@
+{
+  "id": "marketing.ecommerce.category-banner",
+  "title": "E-commerce Category Banner",
+  "assetType": "ecommerce.category-banner",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "mobile"
+  ],
+  "formatProfiles": [
+    "jpg-1600x400",
+    "jpg-800x200"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "E-commerce category page banner",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "E-commerce category banner. Wide format. Purple brand gradient. Bold headline text area. 1600x400px."
+}

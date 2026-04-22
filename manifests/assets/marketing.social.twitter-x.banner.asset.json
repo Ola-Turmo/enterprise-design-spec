@@ -1,0 +1,23 @@
+{
+  "id": "marketing.social.twitter-x.banner",
+  "title": "X/Twitter Profile Banner",
+  "assetType": "social.banner.twitter-x",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "twitter-x"
+  ],
+  "formatProfiles": [
+    "jpg-1500x500"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus X/Twitter profile banner",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Bold X/Twitter profile banner. Purple gradient background. Modern tech company aesthetic. Bold geometric shapes. 1500x500px wide format."
+}

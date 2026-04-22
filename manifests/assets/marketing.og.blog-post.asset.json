@@ -1,0 +1,26 @@
+{
+  "id": "marketing.og.blog-post",
+  "title": "OG Image \u2014 Blog Post",
+  "assetType": "product.og-image",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "web",
+    "twitter-x",
+    "facebook"
+  ],
+  "formatProfiles": [
+    "png-og-1200x630"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.background.site"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus blog post \u2014 Open Graph preview image",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Blog post Open Graph image. 1200x630px. Purple accent bar. Clean typography. Optimized for social sharing."
+}

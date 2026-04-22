@@ -1,0 +1,26 @@
+{
+  "id": "marketing.presentation.backdrop",
+  "title": "Presentation Backdrop \u2014 Stage Banner",
+  "assetType": "illustration.hero",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "presentation",
+    "events"
+  ],
+  "formatProfiles": [
+    "png-3840x2160",
+    "png-1920x1080"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.brand.secondary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus stage backdrop banner",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Event stage backdrop. Large format 3840x2160. Purple gradient with geometric shapes. Brand logo space. Cinematic 4K."
+}

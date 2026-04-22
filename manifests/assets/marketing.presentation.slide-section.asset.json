@@ -1,0 +1,23 @@
+{
+  "id": "marketing.presentation.slide-section",
+  "title": "Presentation Slide \u2014 Section Divider",
+  "assetType": "illustration.spot",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "presentation"
+  ],
+  "formatProfiles": [
+    "png-1920x1080"
+  ],
+  "tokenRefs": [
+    "color.brand.primary"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Presentation section divider slide",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "Section divider slide. Purple gradient background. Large section number and title text. Clean bold typography. 1920x1080px."
+}

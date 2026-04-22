@@ -1,0 +1,27 @@
+{
+  "id": "marketing.ads.display.leaderboard",
+  "title": "Display Ad \u2014 Leaderboard",
+  "assetType": "advertising.display.leaderboard",
+  "status": "approved",
+  "maturity": "stable",
+  "brand": "nexus",
+  "channels": [
+    "programmatic-display",
+    "google-display",
+    "meta-display"
+  ],
+  "formatProfiles": [
+    "png-728x90",
+    "png-970x90"
+  ],
+  "tokenRefs": [
+    "color.brand.primary",
+    "color.semantic.cta"
+  ],
+  "version": "1.0.0",
+  "accessibility": {
+    "altText": "Nexus display ad leaderboard 728x90",
+    "wcagTarget": "AA"
+  },
+  "generationPrompt": "IAB leaderboard display ad 728x90. Bold purple brand color. Clear CTA button space. High contrast for readability."
+}
