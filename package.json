@@ -1,14 +1,43 @@
 {
   "name": "enterprise-design-spec",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An open standard and toolkit for enterprise DESIGN.md, design tokens, and asset manifests.",
   "license": "MIT",
   "type": "module",
+  "bin": {
+    "enterprise-design-spec": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/cli.js"
+    },
+    "./tokens": {
+      "import": "./tokens/core/primitives.tokens.json"
+    },
+    "./tokens/semantic": {
+      "import": "./tokens/core/semantic.tokens.json"
+    },
+    "./schemas/*": {
+      "import": "./schemas/*"
+    }
+  },
+  "files": [
+    "dist",
+    "tokens",
+    "schemas",
+    "templates"
+  ],
   "scripts": {
+    "build": "tsc && chmod +x dist/cli.js",
     "validate": "tsx src/cli.ts validate",
     "validate:example": "tsx src/cli.ts validate --root examples/minimal-brand-system",
     "catalog": "tsx src/cli.ts catalog",
-    "catalog:example": "tsx src/cli.ts catalog --root examples/minimal-brand-system --output releases/example-catalog.json"
+    "catalog:example": "tsx src/cli.ts catalog --root examples/minimal-brand-system --output releases/example-catalog.json",
+    "contrast": "tsx src/cli.ts contrast",
+    "aliases": "tsx src/cli.ts aliases",
+    "export": "tsx src/cli.ts export",
+    "export:all": "tsx src/cli.ts export --format all",
+    "diff": "tsx src/cli.ts diff"
   },
   "keywords": [
     "design-system",
@@ -16,16 +45,22 @@
     "design-docs",
     "stitch",
     "design-md",
-    "asset-manifest"
+    "asset-manifest",
+    "dtcg",
+    "wcag",
+    "style-dictionary"
   ],
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
+    "@tokens-studio/sd-transforms": "^2.0.3",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "colorjs.io": "^0.5.2",
     "fast-glob": "^3.3.3",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "style-dictionary": "^5.4.0"
   },
   "devDependencies": {
     "@types/node": "^24.7.2",

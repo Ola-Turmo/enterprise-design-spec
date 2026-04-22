@@ -190,6 +190,21 @@ To migrate a Stitch-only system:
 5. Add CI validation and publish a machine-readable catalog.
 6. Deprecate untracked exports after a fixed dual-run period.
 
+## Automated tooling
+
+The standard includes a CLI for automation:
+
+```text
+validate   — schema + reference validation
+catalog    — asset inventory generation
+contrast   — WCAG contrast ratio checks (default 4.5:1 AA)
+export     — token → CSS/Tailwind/SCSS/JSON via Style Dictionary v5
+aliases    — token alias resolution + circular ref detection
+diff       — compare two token sets for breaking changes
+```
+
+All commands support `--root` for targeting specific implementations.
+
 ## Success criteria
 
 This standard is working when:
@@ -199,3 +214,6 @@ This standard is working when:
 - code and creative tooling consume the same source of truth
 - CI catches broken references before release
 - asset history, ownership, and accessibility obligations are explicit
+- contrast ratios are validated automatically against WCAG targets
+- tokens build into cross-platform outputs without manual translation
+- alias chains are fully resolved with circular reference detection
