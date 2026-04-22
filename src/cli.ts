@@ -9,6 +9,15 @@ import { generateTypes } from "./lib/types.js";
 import { generatePlayground } from "./lib/playground.js";
 import { runSnapshotTests, updateGoldenFiles } from "./lib/snapshot.js";
 import { migrateFromFormat } from "./lib/migrate.js";
+import { watchTokens } from "./lib/watch.js";
+import { generateChangelog } from "./lib/changelog.js";
+import { scanMonorepo } from "./lib/monorepo.js";
+import { generateDashboard } from "./lib/dashboard.js";
+import { lintCommitMessage, lintFromFile } from "./lib/commit-lint.js";
+import { formatTokens } from "./lib/format.js";
+import { generateDiffViewer } from "./lib/diff-viewer.js";
+import { visualizeTokens } from "./lib/visualize.js";
+import { runPrepublishCheck } from "./lib/prepublish.js";
 import { writeJsonFile } from "./lib/fs.js";
 
 async function main(): Promise<void> {
@@ -269,6 +278,102 @@ async function main(): Promise<void> {
       console.error("Unknown action. Use 'pull' or 'push'.");
       process.exitCode = 1;
     }
+    return;
+  }
+
+  if (command === "watch") {
+    const opts = {
+      root: resolveFlag("--root") ?? root,
+      output: resolveFlag("--output") ?? path.resolve(root, "dist/tokens"),
+      debounceMs: parseInt(resolveFlag("--debounce") ?? "300", 10),
+      verbose: !process.argv.includes("--quiet"),
+      commands: (resolveFlag("--commands") ?? "validate,aliases,export,types,playground").split(","),
+    };
+    watchTokens(opts);
+    return;
+  }
+
+  if (command === "changelog") {
+    const from = resolveFlag("--from") ?? "HEAD~10";
+    const to = resolveFlag("--to") ?? "HEAD";
+    const output = resolveFlag("--output");
+    const changelog = await generateChangelog(root, from, to);
+    if (output) {
+      const { writeFile } = await import("node:fs/promises");
+      await writeFile(output, changelog);
+      console.log(`Changelog written to ${output}`);
+    } else {
+      console.log(changelog);
+    }
+    return;
+  }
+
+  if (command === "monorepo" || command === "brands") {
+    const parallel = parseInt(resolveFlag("--parallel") ?? "4", 10);
+    await scanMonorepo(root, parallel);
+    return;
+  }
+
+  if (command === "dashboard") {
+    await generateDashboard(root);
+    return;
+  }
+
+  if (command === "lint-commit") {
+    const msg = resolveFlag("--message");
+    const file = resolveFlag("--file");
+    const result = msg
+      ? lintCommitMessage(msg)
+      : file
+      ? lintFromFile(file)
+      : null;
+    if (result) {
+      const { printLintResult } = await import("./lib/commit-lint.js");
+      printLintResult(result);
+      process.exit(result.valid ? 0 : 1);
+    }
+    return;
+  }
+
+  if (command === "format") {
+    const check = process.argv.includes("--check");
+    const fix = !check;
+    const results = await formatTokens(root, check, fix);
+    let totalFixed = 0;
+    let totalErrors = 0;
+    for (const r of results) {
+      totalFixed += r.fixed;
+      if (r.errors.length > 0) totalErrors += r.errors.length;
+      if (r.valid) {
+        console.log(`✅ ${r.file}`);
+      } else {
+        console.log(`❌ ${r.file}`);
+        for (const e of r.errors) console.log(`   ${e}`);
+      }
+    }
+    console.log(`\n${results.length} file(s) checked, ${totalFixed} issue(s) fixed`);
+    process.exit(totalErrors > 0 ? 1 : 0);
+    return;
+  }
+
+  if (command === "diff-viewer") {
+    const base = resolveFlag("--base") ?? "HEAD~1";
+    const head = resolveFlag("--head") ?? "HEAD";
+    const output = resolveFlag("--output") ?? path.resolve(root, "dist/token-diff.html");
+    await generateDiffViewer(root, base, head, output);
+    return;
+  }
+
+  if (command === "visualize") {
+    const type = (resolveFlag("--type") ?? "all") as "all" | "colors" | "spacing" | "typography" | "motion";
+    await visualizeTokens(root, type);
+    return;
+  }
+
+  if (command === "prepublish") {
+    const verbose = process.argv.includes("--verbose");
+    const result = await runPrepublishCheck(root, verbose);
+    process.exit(result.ready ? 0 : 1);
     return;
   }
 
