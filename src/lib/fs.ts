@@ -26,3 +26,10 @@ export async function findFiles(root: string, patterns: string[]): Promise<strin
 
   return matches.map((match) => path.join(root, match));
 }
+
+export async function writeTextFile(filePath: string, content: string): Promise<void> {
+  const { mkdir } = await import("node:fs/promises");
+  await mkdir(path.dirname(filePath), { recursive: true });
+  const { writeFile } = await import("node:fs/promises");
+  await writeFile(filePath, content, "utf8");
+}

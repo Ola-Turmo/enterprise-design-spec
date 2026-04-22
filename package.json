@@ -37,7 +37,9 @@
     "aliases": "tsx src/cli.ts aliases",
     "export": "tsx src/cli.ts export",
     "export:all": "tsx src/cli.ts export --format all",
-    "diff": "tsx src/cli.ts diff"
+    "diff": "tsx src/cli.ts diff",
+    "types": "tsx src/cli.ts types",
+    "init": "tsx src/cli.ts init"
   },
   "keywords": [
     "design-system",

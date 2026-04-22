@@ -8,13 +8,21 @@
         },
         "inverse": {
           "$type": "color",
-          "$value": "{color.white}"
+          "$value": "{color.gray.900}"
         }
       },
       "canvas": {
         "default": {
           "$type": "color",
           "$value": "{color.gray.50}"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "{color.gray.50}"
+        },
+        "elevated": {
+          "$type": "color",
+          "$value": "{color.white}"
         }
       }
     },
@@ -23,9 +31,27 @@
         "$type": "color",
         "$value": "{color.gray.900}"
       },
+      "secondary": {
+        "$type": "color",
+        "$value": "{color.blue.700}"
+      },
       "inverse": {
         "$type": "color",
         "$value": "{color.white}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.blue.600}"
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.blue.600}"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.gray.50}"
       }
     }
   },

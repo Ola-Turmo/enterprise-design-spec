@@ -5,6 +5,7 @@ import { buildCatalog, validateProject } from "./lib/catalog.js";
 import { checkContrast } from "./lib/contrast.js";
 import { exportTokens } from "./lib/export.js";
 import { resolveAliases } from "./lib/alias.js";
+import { generateTypes } from "./lib/types.js";
 import { writeJsonFile } from "./lib/fs.js";
 
 async function main(): Promise<void> {
@@ -145,6 +146,36 @@ async function main(): Promise<void> {
     if (result.added.length === 0 && result.removed.length === 0 && result.changed.length === 0) {
       console.log("No differences found");
     }
+    return;
+  }
+
+  if (command === "types") {
+    const outPath = path.resolve(output ?? path.join(path.resolve(root), "dist", "tokens", "tokens.d.ts"));
+    const result = await generateTypes(path.resolve(root), outPath);
+
+    console.log(`\nTypeScript Type Generation\n`);
+    console.log(`  Tokens processed: ${result.tokenCount}`);
+    console.log(`  Types generated: ${result.typeCount}`);
+    console.log(`  Output: ${result.outputPath}`);
+    return;
+  }
+
+  if (command === "init") {
+    const { initBrandSystem } = await import("./lib/init.js");
+    const name = resolveFlag("--name") ?? "my-brand-system";
+    const targetDir = path.resolve(root);
+
+    const result = await initBrandSystem(targetDir, name);
+
+    console.log(`\nBrand System Initialized\n`);
+    console.log(`  Name: ${result.name}`);
+    console.log(`  Location: ${result.path}`);
+    console.log(`  Files created: ${result.filesCreated}`);
+    console.log(`\nNext steps:`);
+    console.log(`  cd ${result.path}`);
+    console.log(`  npm install`);
+    console.log(`  npm run validate`);
+    console.log(`  npm run export`);
     return;
   }
 
